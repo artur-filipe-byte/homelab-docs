@@ -23,58 +23,38 @@ In simple terms:
 
 ## The Setup
 
-Pi-hole runs inside **Docker** on the Qosmio server, alongside Nextcloud and other services.
+Pi-hole runs inside **Docker** on the Qosmio server (192.168.1.76), alongside Nextcloud and other services.
 
-### 1. Create the container
+### Verify it's working
 
 ```bash
-docker run -d \
-  --name pihole \
-  -p 53:53/tcp -p 53:53/udp \
-  -p 8053:80/tcp \
-  -e TZ="Europe/Lisbon" \
-  -e WEBPASSWORD=*** \
-  -v pihole_etc:/etc/pihole \
-  -v pihole_dnsmasq:/etc/dnsmasq.d \
-  --restart unless-stopped \
-  pihole/pihole:latest
+# From any PC on the network, test DNS
+nslookup google.com 192.168.1.76
+# Result: Server: pi.hole  Address: 192.168.1.76
+
+# Test ad blocking
+nslookup doubleclick.net 192.168.1.76
+# Result: Addresses: :: 0.0.0.0  ← blocked!
 ```
 
-- **Port 53** — DNS (TCP and UDP). This is how the router queries Pi-hole.
-- **Port 8053** — Web admin interface. Access at `http://[IP-SERVIDOR]:8053/admin`
-- **WEBPASSWORD** — Admin panel password
-- **Volumes** — Persist data across container restarts
+### The container
 
-### 2. Configure the router to use Pi-hole as DNS
+```bash
+docker ps --filter name=pihole --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
 
-In **pfSense**, I went to:
+### Network configuration
+
+In **pfSense**, the primary DNS is pointed to the server IP:
 
 ```
 Services > DHCP Server > LAN
+DNS Servers: [IP-SERVIDOR]  (192.168.1.76)
 ```
 
-And changed the **DNS Server** to the server IP where Pi-hole runs:
+This means every device on the network (phones, TVs, laptops) uses Pi-hole as their DNS automatically — no installation needed.
 
-```
-DNS Servers: [IP-SERVIDOR]
-```
-
-This makes every device that gets an IP via DHCP automatically use Pi-hole as their DNS server.
-
-### 3. Test
-
-To verify Pi-hole is working:
-
-```bash
-# On the server
-docker logs pihole | tail -5
-
-# From any device on the network
-nslookup google.com
-# Should show Pi-hole's IP as the DNS server
-```
-
-Then open the admin panel at `http://[IP-SERVIDOR]:8053/admin` and check that queries are coming in.
+The DNS server name shows up as **pi.hole** when queried from the network.
 
 ---
 

@@ -23,61 +23,38 @@ Basicamente:
 
 ## O Setup
 
-O Pi-hole corre dentro de **Docker** no servidor Qosmio, ao lado do Nextcloud e outros serviços.
+O Pi-hole corre dentro de **Docker** no servidor Qosmio (192.168.1.76), ao lado do Nextcloud e outros serviços.
 
-### 1. Criar o container
+### Verificar que está a funcionar
 
 ```bash
-docker run -d \
-  --name pihole \
-  -p 53:53/tcp -p 53:53/udp \
-  -p 8053:80/tcp \
-  -e TZ="Europe/Lisbon" \
-  -e WEBPASSWORD="[PASSWORD]" \
-  -v pihole_etc:/etc/pihole \
-  -v pihole_dnsmasq:/etc/dnsmasq.d \
-  --restart unless-stopped \
-  pihole/pihole:latest
+# De qualquer PC na rede, testar DNS
+nslookup google.com 192.168.1.76
+# Resultado: Server: pi.hole  Address: 192.168.1.76
+
+# Testar bloqueio de anúncios
+nslookup doubleclick.net 192.168.1.76
+# Resultado: Addresses: :: 0.0.0.0  ← bloqueado!
 ```
 
-Explicação:
-- **Porta 53** — DNS (TCP e UDP). É por aqui que o router pergunta ao Pi-hole.
-- **Porta 8053** — Interface web do Pi-hole (admin). Abro em `http://[IP-SERVIDOR]:8053/admin`
-- **WEBPASSWORD** — Password para entrar no painel de admin
-- **Volumes** — Para os dados persistirem quando o container reinicia
+### O container
 
-### 2. Configurar o router para usar o Pi-hole como DNS
+```bash
+docker ps --filter name=pihole --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
 
-No **pfSense**, fui a:
+### Como está configurado na rede
+
+No **pfSense**, o DNS primário está apontado para o IP do servidor:
 
 ```
 Services > DHCP Server > LAN
+DNS Servers: [IP-SERVIDOR]  (192.168.1.76)
 ```
 
-E mudei o **DNS Server** para o IP do servidor onde o Pi-hole corre:
+Isto faz com que todos os dispositivos na rede (telemóveis, TVs, portáteis) usem o Pi-hole como DNS automaticamente — sem instalar nada neles.
 
-```
-DNS Servers: [IP-SERVIDOR]
-```
-
-Isto faz com que todos os dispositivos na rede que pedem IP via DHCP recebam automaticamente o Pi-hole como DNS.
-
-Para dispositivos com IP fixo (como o servidor), mudei manualmente o DNS nas definições de rede.
-
-### 3. Testar
-
-Para testar se o Pi-hole está a funcionar:
-
-```bash
-# No servidor
-docker logs pihole | tail -5
-
-# De qualquer dispositivo na rede
-nslookup google.com
-# Devemos ver o IP do Pi-hole como servidor DNS
-```
-
-Depois abri o painel em `http://[IP-SERVIDOR]:8053/admin` e verifiquei que as queries estavam a aparecer.
+O nome do servidor DNS aparece como **pi.hole** quando consultas um域名 da rede.
 
 ---
 
