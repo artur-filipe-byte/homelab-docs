@@ -9,6 +9,19 @@
 
 ---
 
+## What this project demonstrates
+
+| Skill | Application |
+|-------|-------------|
+| **Networking** | Port forwarding, NAT, firewall rules, dynamic DNS (DuckDNS) |
+| **Windows** | Service configuration, Task Scheduler, Windows Firewall |
+| **DNS** | Dynamic public IP updates with DuckDNS |
+| **Security** | Controlled service exposure, firewall access limitation |
+| **Troubleshooting** | External connectivity diagnostics, DNS and firewall issues |
+| **Documentation** | Complete guide to replicate a remote media server setup |
+
+---
+
 ## What it does
 
 I have **Jellyfin** installed on my Windows PC to serve movies and TV shows at home and for my friends to watch when they are away. **DuckDNS** gives a fixed name to my home IP, which changes from time to time.

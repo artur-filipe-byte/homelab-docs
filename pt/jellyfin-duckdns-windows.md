@@ -9,6 +9,19 @@
 
 ---
 
+## O que este projeto demonstra
+
+| Competência | Como se aplica |
+|------------|----------------|
+| **Redes** | Port forwarding, NAT, firewall rules, DNS dinâmico (DuckDNS) |
+| **Windows** | Configuração de serviço, Task Scheduler, firewall do Windows |
+| **DNS** | Atualização dinâmica de IP público com DuckDNS |
+| **Segurança** | Exposição controlada de serviços, limitação de acesso por firewall |
+| **Troubleshooting** | Diagnóstico de conectividade externa, problemas de DNS e firewall |
+| **Documentação** | Guia completo para replicar o setup de media server remoto |
+
+---
+
 ## Para que serve isto
 
 Tenho o **Jellyfin** instalado no meu PC para servir filmes e series em casa e para os meus amigos verem quando estao fora. O **DuckDNS** da um nome fixo ao meu IP caseiro, que muda de vez em quando.

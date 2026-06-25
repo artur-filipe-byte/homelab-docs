@@ -9,6 +9,32 @@
 
 ---
 
+## Traffic Flow
+
+```mermaid
+flowchart LR
+    A[Device on network] -->|Asks for site IP| B[Pi-hole]
+    B -->|Clean domain| C[External DNS<br>8.8.8.8]
+    B -->|Ad domain| D[0.0.0.0<br>BLOCKED]
+    C -->|Response| A
+    D -->|No response| A
+```
+
+---
+
+## What this project demonstrates
+
+| Skill | Application |
+|-------|-------------|
+| **DNS** | Local DNS server configuration and administration (Pi-hole) |
+| **DHCP** | pfSense integration for automatic DNS distribution across the network |
+| **Docker** | Container deploy and maintenance in production |
+| **Networking** | DNS flow understanding, name resolution, fallback configuration |
+| **Troubleshooting** | DNS failure resolution, domain whitelisting |
+| **Security** | Network-wide ad and tracker blocking |
+
+---
+
 ## What it does
 
 **Pi-hole** is a DNS server that blocks ads and trackers **at the network level**. This means I don't need to install anything on my phone, PC, or my mother's TV — everything that goes through the router goes through Pi-hole first, and ads are filtered before reaching any device.

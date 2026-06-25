@@ -9,6 +9,32 @@
 
 ---
 
+## Fluxo de tráfego
+
+```mermaid
+flowchart LR
+    A[Dispositivo na rede] -->|Pede IP de um site| B[Pi-hole]
+    B -->|Dominio limpo| C[DNS externo<br>8.8.8.8]
+    B -->|Dominio de anuncio| D[0.0.0.0<br>BLOQUEADO]
+    C -->|Resposta| A
+    D -->|Sem resposta| A
+```
+
+---
+
+## O que este projeto demonstra
+
+| Competência | Como se aplica |
+|------------|----------------|
+| **DNS** | Configuração e administração de servidor DNS local (Pi-hole) |
+| **DHCP** | Integração com pfSense para distribuição automática de DNS na rede |
+| **Docker** | Deploy e manutenção de container em produção |
+| **Redes** | Compreensão de fluxo de DNS, resolução de nomes, fallback |
+| **Troubleshooting** | Resolução de falhas de DNS e whitelist de domínios |
+| **Segurança** | Bloqueio de rastreadores e anúncios ao nível da rede |
+
+---
+
 ## Para que serve isto
 
 O **Pi-hole** é um servidor DNS que bloqueia anúncios e rastreadores **ao nível da rede**. Isto significa que não preciso de instalar nada no telemóvel, no PC ou na TV da minha mãe — tudo o que passa pelo router passa primeiro pelo Pi-hole e os anúncios são filtrados antes de chegar aos dispositivos.

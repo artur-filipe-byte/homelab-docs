@@ -1,57 +1,85 @@
-# Homelab Docs / Documentacao de Infraestrutura
+# Homelab Docs — Portfolio de Infraestrutura IT
 
 [![PT](https://img.shields.io/badge/lang-PT--PT-green)](./pt/)
 [![EN](https://img.shields.io/badge/lang-EN-blue)](./en/)
-
-Documentation of my homelab infrastructure projects. Each project has a step-by-step setup guide, lessons learned, and troubleshooting tips.
-
-Documentacao dos meus projetos de infraestrutura caseira. Cada projeto inclui guia de configuracao, licoes aprendidas e resolucao de problemas.
-
----
-
-## Projects / Projetos
-
-### Nextcloud + Samba (DIY NAS)
-
-A home server running Nextcloud inside Docker with Samba file sharing, accessible both via web and mapped network drive.
-
-| Language | File |
-|----------|------|
-| :portugal: Portugues | [`pt/servidor-caseiro-nextcloud-samba.md`](pt/servidor-caseiro-nextcloud-samba.md) |
-| :uk: English | [`en/homelab-server-nextcloud-samba.md`](en/homelab-server-nextcloud-samba.md) |
-
-**Topics:** `Docker` `Nextcloud` `Samba` `Linux` `Ubuntu` `Permissions`
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](#)
+[![pfSense](https://img.shields.io/badge/pfSense-212121?logo=pfsense&logoColor=white)](#)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](#)
+[![Nextcloud](https://img.shields.io/badge/Nextcloud-0082C9?logo=nextcloud&logoColor=white)](#)
 
 ---
 
-### Jellyfin + DuckDNS (DIY Netflix)
+## Quem sou
 
-Jellyfin media server on Windows with DuckDNS dynamic DNS for remote access by friends and family.
+**Artur Filipe** — Profissional em transicao para IT e ciberseguranca, certificado CompTIA A+ e Security+. 13 anos de experiencia em atendimento ao cliente, gestao de incidentes e resolucao de problemas em tempo real.
 
-| Language | File |
-|----------|------|
-| :portugal: Portugues | [`pt/jellyfin-duckdns-windows.md`](pt/jellyfin-duckdns-windows.md) |
-| :uk: English | [`en/jellyfin-duckdns-windows.md`](en/jellyfin-duckdns-windows.md) |
+Este repositorio documenta projetos praticos que construi no meu homelab para demonstrar competencias em **redes, Docker, Linux, Windows, DNS, seguranca e automacao**.
 
-**Topics:** `Jellyfin` `DuckDNS` `Port Forwarding` `DNS` `Windows`
+Disponivel para: **IT Support, SOC Analyst Junior, Cybersecurity Junior, Sysadmin Junior**
+
+| | Links |
+|---|---|
+| :globe_with_meridians: Website | [arturfilipe.work](https://arturfilipe.work) |
+| :incoming_envelope: Email | artur.a.filipe@protonmail.com |
+| :octocat: GitHub | [github.com/artur-filipe-byte](https://github.com/artur-filipe-byte) |
 
 ---
 
-## Structure
+## Projetos em Destaque
 
-```
+| Projeto | Stack | Competencias | Docs |
+|---------|-------|-------------|------|
+| **Nextcloud + Samba** (NAS) | Docker, Linux, Nextcloud, Samba, Cloudflare | Docker, Linux admin, permissões, backup, documentacao | [PT](pt/servidor-caseiro-nextcloud-samba.md) · [EN](en/homelab-server-nextcloud-samba.md) |
+| **Jellyfin + DuckDNS** (Media Server) | Jellyfin, DuckDNS, Port Forwarding, Windows, pfSense | DNS, NAT, port forwarding, remote access, troubleshooting | [PT](pt/jellyfin-duckdns-windows.md) · [EN](en/jellyfin-duckdns-windows.md) |
+| **Pi-hole** (Ad Blocker) | Pi-hole, Docker, pfSense, DHCP, DNS | DNS, DHCP, Docker, administracao de rede, seguranca | [PT](pt/pi-hole-docker.md) · [EN](en/pi-hole-docker.md) |
+
+---
+
+## Topologia de Rede
+
+![Diagrama de Rede](pt/imagens/topologia-rede.svg)
+
+*Infraestrutura completa do homelab: WAN → pfSense → Suricata IDS/IPS → Rede Interna (Qosmio Server + Windows PC)*
+
+---
+
+## O que este repositorio demonstra
+
+| Competencia | Onde se ve |
+|------------|-----------|
+| **Redes** | pfSense, Suricata, DNS, DHCP, firewalls, VLANs |
+| **Docker** | Nextcloud, Pi-hole, Portainer, Elastic Stack em containers |
+| **Linux** | Ubuntu/Debian, Bash, SSH, Docker Compose, permissoes |
+| **Windows** | Jellyfin, Task Scheduler, servicos Windows |
+| **DNS** | Pi-hole, DuckDNS, nslookup, configuracao DHCP |
+| **Seguranca** | Firewall rules, Suricata IDS/IPS, DMARC/SPF, Cloudflare |
+| **Documentacao** | Guias PT/EN bilíngues, estruturados e reproduziveis |
+| **Resolucao de Problemas** | Secoes de troubleshooting em cada projeto |
+
+---
+
+## Estrutura do Repositorio
+
+```text
 homelab-docs/
-├── README.md
-├── pt/       # Documentacao em Portugues (PT-PT)
-└── en/       # Documentation in English
+├── README.md              ← Este ficheiro (landing page do portfolio)
+├── pt/                    ← Documentacao em Portugues (PT-PT)
+│   ├── imagens/           ← Diagramas e screenshots
+│   ├── servidor-caseiro-nextcloud-samba.md
+│   ├── jellyfin-duckdns-windows.md
+│   └── pi-hole-docker.md
+└── en/                    ← Documentation in English
+    ├── homelab-server-nextcloud-samba.md
+    ├── jellyfin-duckdns-windows.md
+    └── pi-hole-docker.md
 ```
-
-## About / Sobre
-
-This repository is part of my portfolio as I transition from hospitality to IT / cybersecurity. Documentation is a skill I take seriously -- clear, structured, and useful for anyone following the same steps.
-
-Este repositorio faz parte do meu portfolio enquanto faco a transicao de carreira da hotelaria para IT / ciberseguranca. Levo a documentacao a serio -- clara, estruturada e util para quem seguir os mesmos passos.
 
 ---
 
-**Artur Filipe** - [arturfilipe.work](https://arturfilipe.work)
+## Sobre
+
+> Publiquei esta documentacao como parte do meu portfolio de transicao de carreira da hotelaria para IT e ciberseguranca. Cada projeto foi feito, desfeito, debugado e documentado — porque sei que e esse o processo real do trabalho em IT.
+
+---
+
+**Artur Filipe** — [arturfilipe.work](https://arturfilipe.work) · [GitHub](https://github.com/artur-filipe-byte)

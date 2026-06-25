@@ -9,6 +9,19 @@
 
 ---
 
+## O que este projeto demonstra
+
+| Competência | Como se aplica |
+|------------|----------------|
+| **Docker** | Deploy e gestão de múltiplos containers (Nextcloud, Pi-hole, Portainer) |
+| **Linux** | Configuração de Ubuntu Server, permissões, SSH, systemd |
+| **Redes** | Mapeamento de portas, proxy reverso Cloudflare, DNS |
+| **Armazenamento** | Montagem Samba, permissões de ficheiros, sincronização Nextcloud↔Windows |
+| **Documentação** | Guia completo e reproduzível para replicar o setup |
+| **Troubleshooting** | Resolução de conflitos de permissões, portas e volumes Docker |
+
+---
+
 ## Para que serve isto
 
 Tenho um portatil velho a servir de servidor ca em casa. Tem o **Nextcloud** a correr dentro de Docker e o **Samba** para partilhar ficheiros na rede. Basicamente e o meu Google Drive pessoal, sem pagar subscricao e com os dados todos em casa.
