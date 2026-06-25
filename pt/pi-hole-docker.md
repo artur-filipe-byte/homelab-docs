@@ -37,7 +37,7 @@ flowchart LR
 
 ## Para que serve isto
 
-O **Pi-hole** é um servidor DNS que bloqueia anúncios e rastreadores **ao nível da rede**. Isto significa que não preciso de instalar nada no telemóvel, no PC ou na TV da minha mãe — tudo o que passa pelo router passa primeiro pelo Pi-hole e os anúncios são filtrados antes de chegar aos dispositivos.
+O **Pi-hole** é um servidor DNS que bloqueia anúncios e rastreadores **ao nível da rede**. Isto significa que não preciso de instalar nada em nenhum dispositivo — tudo o que passa pelo router passa primeiro pelo Pi-hole e os anúncios são filtrados antes de chegar aos dispositivos.
 
 Basicamente:
 - Abres um site qualquer
@@ -101,11 +101,11 @@ No meu caso, o Pi-hole bloqueia cerca de **20-30%** de todo o tráfego DNS. Isto
 
 | Antes do Pi-hole | Depois do Pi-hole |
 |------------------|-------------------|
-| Anúncios no telemóvel da minha mãe | Mãe sem anúncios no telemóvel |
+| Anúncios em todos os dispositivos da rede | Rede sem anúncios |
 | Sites lentos cheios de rastreadores | Sites carregam visivelmente mais rápido |
-| TVs e dispositivos a fazer pedidos para tracking desconhecido | Tráfego bloqueado na origem |
+| Dispositivos a fazer pedidos para tracking desconhecido | Tráfego bloqueado na origem |
 
-A minha mãe não sabe o que é um Pi-hole, nem precisa de saber. As fotos continuam a fazer sync para o Nextcloud e a internet funciona como antes, só que sem anúncios.
+O Pi-hole faz o seu trabalho sem ninguém precisar de saber que existe. A internet funciona como antes, só que sem anúncios.
 
 ---
 

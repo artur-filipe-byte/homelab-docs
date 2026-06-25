@@ -26,8 +26,6 @@
 
 Tenho um portatil velho a servir de servidor ca em casa. Tem o **Nextcloud** a correr dentro de Docker e o **Samba** para partilhar ficheiros na rede. Basicamente e o meu Google Drive pessoal, sem pagar subscricao e com os dados todos em casa.
 
-A minha mae tambem usa. Tem o Nextcloud no telemovel e as fotos fazem sync automatico quando esta em casa. Ela nem sabe o que e um servidor. So sabe que as fotos aparecem no computador.
-
 ---
 
 ## O Hardware

@@ -26,8 +26,6 @@
 
 I have an old laptop running as a home server. It runs **Nextcloud** inside Docker and **Samba** for network file sharing. Basically it is my personal Google Drive, no subscription fees and all my data stays at home.
 
-My mother uses it too. She has Nextcloud on her phone and photos sync automatically when she is home. She has no idea what a server is. She just knows "the photos show up on the computer".
-
 ---
 
 ## Hardware

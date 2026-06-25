@@ -37,7 +37,7 @@ flowchart LR
 
 ## What it does
 
-**Pi-hole** is a DNS server that blocks ads and trackers **at the network level**. This means I don't need to install anything on my phone, PC, or my mother's TV — everything that goes through the router goes through Pi-hole first, and ads are filtered before reaching any device.
+**Pi-hole** is a DNS server that blocks ads and trackers **at the network level**. This means I do not need to install anything on any device — everything that goes through the router goes through Pi-hole first, and ads are filtered before reaching any device.
 
 In simple terms:
 - You open a website
