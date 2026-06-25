@@ -24,7 +24,7 @@
 
 ## Para que serve isto
 
-Tenho o **Jellyfin** instalado no meu PC para servir filmes e series em casa e para acesso remoto quando estou fora. O **DuckDNS** da um nome fixo ao meu IP caseiro, que muda de vez em quando.
+Tenho o **Jellyfin** instalado no meu PC para servir filmes e series em casa e para os meus amigos verem quando estao fora. O **DuckDNS** da um nome fixo ao meu IP caseiro, que muda de vez em quando.
 
 Basicamente:
 - Abres `[TEU-DOMINIO].duckdns.org` no browser ou na app do Jellyfin
@@ -54,7 +54,7 @@ Adicionei as pastas onde tenho os filmes e series. O Jellyfin trata de ir buscar
 
 ---
 
-## O Setup: DuckDNS (Para Acesso Remoto)
+## O Setup: DuckDNS (Para os Meus Amigos Verem de Fora)
 
 O DuckDNS e fixe porque e gratis e faz exatamente o que preciso: um dominio que aponta sempre para minha casa, mesmo quando o IP muda.
 
@@ -96,12 +96,12 @@ Para testar, desliguei-me do WiFi do telemovel (para nao estar na rede de casa) 
 
 ---
 
-## Como Aceder Remotamente
+## Como os Meus Amigos Acedem
 
-So tenho de saber:
+So tenho de lhes dizer:
 1. Instalar a app **Jellyfin** (ou usar o browser)
 2. Servidor: `http://[TEU-DOMINIO].duckdns.org:8096`
-3. User e password que criei
+3. User e password que criei para eles
 
 Funciona no telemovel, tablet, TV (Android TV), etc.
 
@@ -109,7 +109,7 @@ Funciona no telemovel, tablet, TV (Android TV), etc.
 
 ## Licoes Que Aprendi
 
-1. **O IP de casa muda.** Da a necessidade do DuckDNS. Sem ele, estava sempre a dar um IP novo.
+1. **O IP de casa muda.** Da a necessidade do DuckDNS. Sem ele, estava sempre a dar um IP novo aos amigos.
 2. **Firewall tem de estar afinada.** Abrir portas no router sem cuidado e perigoso. So abri a 8096 e apenas para o Jellyfin.
 3. **O PC tem de estar ligado.** Se desligo o PC, o Jellyfin vai abaixo. Solucao possivel: meter o Jellyfin num servidor Linux ligado 24/7.
 4. **DuckDNS e mesmo gratis.** Nao paguei nada e funciona ha meses sem falhar.
@@ -132,7 +132,7 @@ A culpa e da net de casa (upload limitado). Para ver em casa sem problemas, uso 
 
 - [ ] Passar o Jellyfin para o servidor Linux para nao precisar do Windows ligado 24/7
 - [ ] Meter HTTPS (com Let's Encrypt)
-- [ ] Limitar a banda para acesso remoto nao lixar a net de casa
+- [ ] Limitar a banda que os amigos podem usar para nao lixar a net de casa
 
 ---
 

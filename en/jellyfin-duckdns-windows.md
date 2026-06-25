@@ -24,7 +24,7 @@
 
 ## What it does
 
-I have **Jellyfin** installed on my Windows PC to serve movies and TV shows at home and for remote access when I am away. **DuckDNS** gives a fixed name to my home IP, which changes from time to time.
+I have **Jellyfin** installed on my Windows PC to serve movies and TV shows at home and for my friends to watch when they are away. **DuckDNS** gives a fixed name to my home IP, which changes from time to time.
 
 Basically:
 - Open `[YOUR-DOMAIN].duckdns.org` in a browser or the Jellyfin app
@@ -109,7 +109,7 @@ It works on phones, tablets, TVs (Android TV), etc.
 
 ## Lessons Learned
 
-1. **Home IPs change.** That is why DuckDNS is necessary. Without it, I would be giving out a new IP address all the time.
+1. **Home IPs change.** That is why DuckDNS is necessary. Without it, I would be giving my friends a new IP address all the time.
 2. **Firewall must be properly configured.** Opening ports on the router without care is dangerous. I only opened port 8096 and only for Jellyfin.
 3. **The PC must stay on.** If I turn off the PC, Jellyfin goes down. Possible solution: move Jellyfin to a Linux server running 24/7.
 4. **DuckDNS is truly free.** I paid nothing and it has been working for months without issues.
@@ -132,7 +132,7 @@ My home internet upload speed is the bottleneck. For watching at home without is
 
 - [ ] Move Jellyfin to a Linux server so I do not need Windows on 24/7
 - [ ] Set up HTTPS (with Let's Encrypt)
-- [ ] Limit bandwidth for remote access so it does not kill my home internet
+- [ ] Limit bandwidth friends can use so it does not kill my home internet
 
 ---
 
