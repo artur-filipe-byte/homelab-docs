@@ -4,6 +4,11 @@
 
 ---
 
+![Topologia de Rede](imagens/topologia-rede.svg)
+*Diagrama da infraestrutura do homelab*
+
+---
+
 ## Para que serve isto
 
 Tenho um portatil velho a servir de servidor ca em casa. Tem o **Nextcloud** a correr dentro de Docker e o **Samba** para partilhar ficheiros na rede. Basicamente e o meu Google Drive pessoal, sem pagar subscricao e com os dados todos em casa.
@@ -34,6 +39,9 @@ O melhor disto tudo? O portatil estava encostado a ganhar po. Dei-lhe uma segund
 - **Ollama** - tenho la LLMs locais para testar (nao faz parte do projeto principal, mas esta la)
 
 Quando mudo alguma coisa no Nextcloud pela web (uma pasta, um ficheiro), aparece logo no Windows atraves da drive mapeada. E vice-versa. Isto foi o mais dificil de conseguir e vou explicar a seguir.
+
+![Estado dos Serviços](imagens/terminal-status.svg)
+*Terminal a mostrar o estado dos serviços do homelab*
 
 ---
 

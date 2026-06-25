@@ -4,6 +4,11 @@
 
 ---
 
+![Network Topology](../pt/imagens/topologia-rede.svg)
+*Homelab infrastructure diagram (Jellyfin runs on the Windows PC)*
+
+---
+
 ## What it does
 
 I have **Jellyfin** installed on my Windows PC to serve movies and TV shows at home and for my friends to watch when they are away. **DuckDNS** gives a fixed name to my home IP, which changes from time to time.

@@ -4,6 +4,11 @@
 
 ---
 
+![Topologia de Rede](imagens/topologia-rede.svg)
+*Diagrama da infraestrutura do homelab (o Jellyfin está no PC Windows)*
+
+---
+
 ## Para que serve isto
 
 Tenho o **Jellyfin** instalado no meu PC para servir filmes e series em casa e para os meus amigos verem quando estao fora. O **DuckDNS** da um nome fixo ao meu IP caseiro, que muda de vez em quando.

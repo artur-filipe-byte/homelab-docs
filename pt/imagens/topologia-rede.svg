@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#22d3ee"/>
+    </marker>
+    <marker id="arrow-dash" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#fb7185"/>
+    </marker>
+    <marker id="arrow-wan" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#fbbf24"/>
+    </marker>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1117"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.3"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="400" y="35" font-family="monospace" font-size="16" fill="#e2e8f0" text-anchor="middle" font-weight="bold">Topologia de Rede — Homelab</text>
+  <text x="400" y="52" font-family="monospace" font-size="10" fill="#94a3b8" text-anchor="middle">Atualizado: Junho 2026</text>
+
+  <!-- === INTERNET (WAN) === -->
+  <rect x="300" y="70" width="200" height="50" rx="25" fill="rgba(120, 53, 15, 0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="400" y="98" font-family="monospace" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">☁  Internet (WAN)</text>
+  <text x="400" y="112" font-family="monospace" font-size="8" fill="#fbbf24" text-anchor="middle">5.158.10.154 — Vodafone PT</text>
+
+  <!-- Arrow from Internet to ISP Router -->
+  <line x1="400" y1="120" x2="400" y2="148" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrow-wan)"/>
+
+  <!-- ISP Router -->
+  <rect x="320" y="150" width="160" height="45" rx="6" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="400" y="172" font-family="monospace" font-size="11" fill="#94a3b8" text-anchor="middle">Router Vodafone</text>
+  <text x="400" y="186" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">Portas 80/443 abertas</text>
+
+  <!-- Arrow ISP Router to pfSense -->
+  <line x1="400" y1="195" x2="400" y2="228" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === SECURITY BOUNDARY (pfSense + Suricata) === -->
+  <rect x="80" y="230" width="640" height="150" rx="8" fill="none" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="95" y="245" font-family="monospace" font-size="9" fill="#fb7185">PERÍMETRO DE SEGURANÇA  (DMZ)</text>
+
+  <!-- pfSense -->
+  <rect x="280" y="250" width="240" height="55" rx="6" fill="rgba(136, 19, 55, 0.4)" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="400" y="272" font-family="monospace" font-size="12" fill="#fb7185" text-anchor="middle" font-weight="bold">🛡  pfSense Firewall</text>
+  <text x="400" y="288" font-family="monospace" font-size="8" fill="#fb7185" text-anchor="middle">Filtragem de tráfego · NAT · Regras de firewall</text>
+  <text x="400" y="298" font-family="monospace" font-size="8" fill="#fb7185" text-anchor="middle">Rede interna: 192.168.1.0/24</text>
+
+  <!-- Arrow pfSense to Suricata -->
+  <line x1="400" y1="305" x2="400" y2="330" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-dash)"/>
+
+  <!-- Suricata -->
+  <rect x="290" y="332" width="220" height="40" rx="6" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+  <text x="400" y="350" font-family="monospace" font-size="10" fill="#fb7185" text-anchor="middle">🔍  Suricata IDS/IPS</text>
+  <text x="400" y="363" font-family="monospace" font-size="8" fill="#fb7185" text-anchor="middle">Análise de tráfego · Deteção de ameaças</text>
+
+  <!-- Arrow Suricata to Internal Network -->
+  <line x1="400" y1="372" x2="400" y2="410" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- === INTERNAL NETWORK === -->
+  <rect x="80" y="412" width="640" height="160" rx="8" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="95" y="427" font-family="monospace" font-size="9" fill="#34d399">REDE INTERNA</text>
+
+  <!-- Qosmio Server -->
+  <rect x="140" y="440" width="200" height="60" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="240" y="462" font-family="monospace" font-size="12" fill="#34d399" text-anchor="middle" font-weight="bold">🖥  Qosmio Server</text>
+  <text x="240" y="478" font-family="monospace" font-size="8" fill="#34d399" text-anchor="middle">192.168.1.76</text>
+  <text x="240" y="490" font-family="monospace" font-size="8" fill="#34d399" text-anchor="middle">Nextcloud · Samba · Docker</text>
+
+  <!-- Windows PC -->
+  <rect x="460" y="440" width="200" height="60" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="560" y="462" font-family="monospace" font-size="12" fill="#34d399" text-anchor="middle" font-weight="bold">💻  Windows PC</text>
+  <text x="560" y="478" font-family="monospace" font-size="8" fill="#34d399" text-anchor="middle">Gestão · SSH · Scripts</text>
+  <text x="560" y="490" font-family="monospace" font-size="8" fill="#34d399" text-anchor="middle">Backups · Administração</text>
+
+  <!-- Arrow between servers -->
+  <line x1="340" y1="470" x2="458" y2="470" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Services labels -->
+  <text x="400" y="520" font-family="monospace" font-size="9" fill="#94a3b8" text-anchor="middle">SERVIÇOS</text>
+
+  <rect x="100" y="530" width="130" height="28" rx="4" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="165" y="548" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Nextcloud</text>
+
+  <rect x="250" y="530" width="100" height="28" rx="4" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="300" y="548" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Samba (Z:)</text>
+
+  <rect x="370" y="530" width="120" height="28" rx="4" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="430" y="548" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Docker / Portainer</text>
+
+  <rect x="510" y="530" width="100" height="28" rx="4" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="560" y="548" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Pi-hole</text>
+
+  <rect x="630" y="530" width="100" height="28" rx="4" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+  <text x="680" y="548" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Cloudflare</text>
+
+  <!-- Legend -->
+  <text x="30" y="590" font-family="monospace" font-size="7" fill="#64748b">🟡 WAN  🔴 Segurança  🟢 Rede Interna  🟣 Serviços</text>
+</svg>

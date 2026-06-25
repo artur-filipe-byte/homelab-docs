@@ -4,6 +4,11 @@
 
 ---
 
+![Network Topology](../pt/imagens/topologia-rede.svg)
+*Homelab infrastructure diagram*
+
+---
+
 ## What it does
 
 I have an old laptop running as a home server. It runs **Nextcloud** inside Docker and **Samba** for network file sharing. Basically it is my personal Google Drive, no subscription fees and all my data stays at home.
