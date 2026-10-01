@@ -53,8 +53,6 @@ O melhor disto tudo? O portatil estava encostado a ganhar po. Dei-lhe uma segund
 
 Quando mudo alguma coisa no Nextcloud pela web (uma pasta, um ficheiro), aparece logo no Windows atraves da drive mapeada. E vice-versa. Isto foi o mais dificil de conseguir e vou explicar a seguir.
 
-![Estado dos Serviços](imagens/terminal-status.svg)
-*Terminal a mostrar o estado dos serviços do homelab*
 
 ---
 
